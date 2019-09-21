@@ -1,4 +1,4 @@
-# Exemple de séquence
+# Exemple de séquences
 
 N = 12
 b = a = 1
