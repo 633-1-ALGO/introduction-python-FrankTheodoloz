@@ -7,3 +7,21 @@
 #                       Sinon, elle est bissextile.
 #
 # Résultat attendu : Un message affichant "Année bissextile" ou "Année non bissextile"
+
+
+def test_annee_bissextile(_annee: int) -> None:
+    if _annee % 4 != 0:
+        print(_annee, ": Année non bissextile")
+    elif _annee % 100 == 0:
+        if _annee % 400 == 0:
+            print(_annee, ": Année bissextile")
+        else:
+            print(_annee, ": Année non bissextile")
+    else:
+        print(_annee, ": Année bissextile")
+
+
+test_annee_bissextile(1900)
+
+for annee in range(1980, 2020):
+    test_annee_bissextile(annee)
