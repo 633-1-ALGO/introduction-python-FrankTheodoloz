@@ -14,12 +14,17 @@ def texte_split(_texte: str) -> list:
     return _texte.split(" ")
 
 
-def compter_occurence(_liste: list, _lookup: str) -> None:
+def compter_occurence_texte(_texte: str, _lookup: str) -> None:
+    i = _texte.count(_lookup)
+    print("Il y a", i, "fois le mot \"" + _lookup + "\" dans le texte")
+
+
+def compter_occurence_liste(_liste: list, _lookup: str) -> None:
     i = 0
     for word in _liste:
         if _lookup in word:
             i += 1
-    print("Il y a", i, "fois le mot \"" + _lookup + "\" dans le texte")
+    print("Il y a", i, "fois le mot \"" + _lookup + "\" dans la liste")
 
 
 def afficher_texte_inverse(_texte: str) -> None:
@@ -62,7 +67,8 @@ def afficher_texte_mots_inverse(_liste: list) -> None:
 texte = remplacer_mot(texte, "est", "représente")
 liste_mots = texte_split(texte)
 
-compter_occurence(liste_mots, "exemple")
+compter_occurence_texte(texte, "exemple")
+compter_occurence_liste(liste_mots, "exemple")
 afficher_texte_inverse(texte)
 
 lire_mots_recursif(texte)
